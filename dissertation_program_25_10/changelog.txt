@@ -1,0 +1,83 @@
+[Benjamin Udim Nkere | Last Updated: 21-10-22]
+
+-=-=-=-=-=-To-Do-=-=-=-=-=-
+- Nothing!?
+- Test this program's automatic coding against manual coding of data.
+
+### Non-priorities
+- Each scale/module will need to create its own table 4/5 completed [auaifluency,cse,hmts,ipip50]
+--> Recode create tables and writing tables to account for 'null' entries
+---> could be simply? Or not? Custom SQL code to be written to not submit an entry where field == null
+----> would have to supply one less parameter ot the SQL query.
+- consider making scales inherit methods for checking for missing entries
+
+### Impractical Possibilities ###
+# [] Add way to manually input qualtrics column names for each module
+# [] Data handling between-subjects and within-subjects
+
+## Notes ##
+---* i will need to check fluency manuaally because people can put in typos
+
+
+-=-=-=-=Change-log-=-=-=-=-
+
+A-long-time-ago
+- created function for measing participant completion times on qualtrics questions
+- created function to parse qualtrics data and print it in a friendly/pretty format
+- created participant function
+16-10-22
+- created class for scales
+- created method for registering scales
+- created method framework for creating scales' SQL tables (createtables)
+- created method framework for creating scales' csv output (preparecsv) for further SPSS analysis
+- made participant profiles object-oriented
+- integrated scales' data with participant profiles (setprofile)
+- created method to compile csv output from multiple scales and participants into single csv file
+- added preparecsv for auaifluency,cse,hmts
+- added createtables for auaifluency,cse,
+17-10-22
+- added hmts createtables
+- added ipip50 createtables
+- added ipip50 preparecsv
+- added caq preparecsv
+- edited writecsv registerparticipants module function
+- timming pid off of concated csvs from multiple scales
+20-10-22
+- done CSE (Clean missing data with 'null' insertions)
+- done hmts
+21-10-22
+- done IPIP50
+- done auaifluency
+- done CAQ
+-* create contingencies for missing entries
+-* account for making reponses null if they only contain whitespace with nothign else
+1 - done - add auto-incremented case numbers so i can differentiate between datasets
+2 - done - I need to capture the demographic data - answers to other questions and include them in the csv that i will be working from.
+3 - DEMO GRAPHICS i might want to also add date of submission to my csv data collection - so if i change ethics i can find which data has given consent
+22-10-22
+- fixed auaifluency multiple commas as multiple auaifluency answers
+- added NULL_FLAGS to replace 'null'
+- Created NULL_FLAGS for Empty scale data versus Incomplete scale data Done: HMTS, CSE, auaifluency, ipip50, CAQ
+- CAQ ***Missing Data (skipped) domains is being treated as 0 - See line ~163+*** 
+
+-=-=-=-=Thought-log-=-=-=-=-
+- trim off pid because there will be multiple columns of it from each of the scales
+- I can do this by removing header[0] and row[0] after the first scale
+- Each scale/module will need to prepare its own csv 5/5 completed
+- [auaifluency,cse,hmts,ipip50,caq]
+- Problem: scores 0 i need to input NULL values instead
+-- To deal with missing cases i need to gather the field names of the scales' questions and put them into a table.
+-- Then I can query across each response and fill the values with NULL
+-- I should have the program ask for a model response ID, this ID will be a manually completed response with all of the questions answered
+19-10-22
+This is not needed for simply computing data. This is data aggregation. Another project. [- what if instead of single tables for each module, we created a single table to comprise all the data?
+-- alternative to this, we need to include a key of the study ID so that cross-comparisons can be made
+- I need to know what Qualtrics data, multiple scales and tables would look like in pythonanywhere admin OR single tables AND how this would be sorted]
+20-10-22
+- consider making scales inherit methods for checking for missing entries
+-- contingencies will need to be addressed in each individual module
+-- OR in fact afterwards, in clean up, comparing each participants entries... ill need to do some thinking
+--- to do this i can create a question template for each qualtrics scale then compare keys to find the missing entries?
+22-10-22
+- # (caq-model participant template creation) This makes me think though if this is creating templates, does it create templates when the times_i/ii questions are chosen?
+- # -> yes because we are only check that the main domain question has been answered. the times_i/ii scores are dealt with sepearately and if answered and empty it becomes 1

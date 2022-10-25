@@ -1,0 +1,29 @@
+How have i decided to deal with missing or incomplete data?
+
+CSE:
+- Any missing data results in the score being NULL_INCOMPLETE
+-> This is because to calculate a valid CSE score, all of the questions need to be answered.
+- All missing data result in the score being NULL_EMPTY
+
+CAQ:
+- Any individual domains that are unanswered become NULL_EMPTY
+- All missing individual domain data results in the Global Score being NULL_EMPTY
+- Global Score is calculated even if some individual domains are unanswered. They are being treated as 0.
+
+HMT-S:
+- Any missing data results in the score being NULL_INCOMPLETE
+-> This is because to calculate a valid HMTS score, all of the questions need to be answered.
+- All missing data result in the score being NULL_EMPTY 
+
+IPIP-50:
+- Any missing data for a single domain results in that domain being NULL_INCOMPLETE
+- All missing data for a single domain results in that domain being NULL_EMPTY
+-* Domains are scored independentally of each other.
+
+AUAI-Fluency:
+- Empty data of a task (uses/instances) results in the score being NULL_EMPTY
+- If all of the Uses or Instances tasks are NULL_EMPTY then the total score for Uses/Instances is NULL_INCOMPLETE
+-> It should really be NULL EMPTY but i haven't written the code to account for multiple uses or instances tasks
+- If all tasks of both Uses and Instances are NULL_EMPTY then the overall fluency score is NULL_EMPTY
+- If only one of the overall scores for Uses or Instances is NULL_EMPTY then teh overall fluency score is calculated with what is given
+-> This allows for the possiblity that the participant cannot think of a single thing.
