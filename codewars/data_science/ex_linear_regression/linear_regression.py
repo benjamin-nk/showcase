@@ -35,18 +35,17 @@ def regressionLine(x, y):
     y = numpy.array(y)
     r = numpy.corrcoef(x,y)
     r = r[0][1]
-    print(r)
 
+    # 2. Get Standard Deviations of x and y
     n = len(x) # To bullet-proof this solution, we would need to match the data entries case by case so that missing data can be excluded
     df = n-1
-
     meany = numpy.mean(y)
     meanx = numpy.mean(x)
-    print(meany,meanx)
-    sy = sqrt(sum([(yj-meany)**2 for yj in y])/(df))
-    sx = sqrt(sum([(xj-meanx)**2 for xj in x])/(df))
-   
-    b = r*(sy/sx)
+    sdy = sqrt(sum([(yj-meany)**2 for yj in y])/(df))
+    sdx = sqrt(sum([(xj-meanx)**2 for xj in x])/(df))
+    
+    # 3. Calculate the Regression Coefficient and Constant
+    b = r*(sdy/sdx)
     a = meany - b * meanx
 
     return (round(a,4),round(b,4))
