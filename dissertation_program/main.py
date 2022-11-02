@@ -7,7 +7,6 @@ import re
 def prettyprint(d):
     print(json.dumps(d,indent=4))
 
-# I may need to add manual input for column names into each module.
 import registerscales
 import registerparticipants
 from scales.ipip50 import * # Help @ https://stackoverflow.com/questions/15222913/python-imports-from-subfolders and https://stackoverflow.com/questions/29283139/python-from-import
@@ -17,8 +16,8 @@ from scales.cse import *
 from scales.caq import *
 from scales.custom import *
 
-# I can make this into another module so that parsing CSV is not unique to qualitrics
-csvfn = "diss_survey_22 October 2022_19.48.csv"
+# I can make the following 3 paragraphs of code into another module so that parsing CSV is not unique to qualitrics
+csvfn = "diss_survey_22 October 2022_19.48.csv" # sample data file
 csvfh = open(csvfn,encoding='utf-8')
 
 reader = csv.DictReader(csvfh)
@@ -52,7 +51,8 @@ def parseandcompute(model_pid=None,WriteSQL=False):
                 'sex',
                 'gender',
                 'EndDate', # submission date (not demographic but important to collect)
-                'consent'
+                'consent_no_retention',
+                'consent_retention'
             ]
             if colname in custom:
                 dpmscales.registerscalecolumn(Custom().name,colname)
@@ -70,10 +70,7 @@ def parseandcompute(model_pid=None,WriteSQL=False):
                 auregex = re.search('^au_[a-zA-Z]+',colname)
                 airegex = re.search('^ai_[a-zA-Z]+',colname)
 
-                # Unneccessary elif but cba changing now
-                if auregex and auregex.group() == colname:
-                    dpmscales.registerscalecolumn(AUAIFluency().name,colname)
-                elif airegex and airegex.group() == colname:
+                if (auregex and auregex.group() == colname) or (airegex and airegex.group() == colname):
                     dpmscales.registerscalecolumn(AUAIFluency().name,colname)
             elif colname.startswith('caq') and 'timing' not in colname:
                 #5/5
@@ -116,7 +113,8 @@ def parseandcompute(model_pid=None,WriteSQL=False):
 parseandcompute('R_30r5r9UEUG8l8ln')
 
 # registerparticipants.DPmProfiles().writecsv('ALL_SCALES','qualitytest',['R_3Dv8kYxq5wn1JaF'])
-registerparticipants.DPmProfiles().writecsv('ALL_SCALES','qualitytest')
+# registerparticipants.DPmProfiles().writecsv('ALL_SCALES','qualitytest')
+registerparticipants.DPmProfiles().writecsv('ALL_SCALES','output')
 # registerparticipants.DPmProfiles().writecsv('hmts',csvfn.replace('.csv',''))
 # registerparticipants.DPmProfiles().writecsv(['auaifluency','cse','hmts','ipip50'])
 # registerparticipants.DPmProfiles().writecsv('ALL_SCALES')

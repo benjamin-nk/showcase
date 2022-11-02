@@ -1,5 +1,5 @@
 # scale: Alternative Uses and Instances (AUAI) tasks
-# scale source:
+# scale source: Benedek, M., Mühlmann, C., Jauk, E., & Neubauer, A. C. (2013). Assessment of divergent thinking by means of the subjective top-scoring method: Effects of the number of top-ideas and time-on-task on reliability and validity. Psychology of aesthetics, creativity, and the arts, 7(4), 341.
 # fluency is the number of original items
 # originality is determined by manual review; in comparison to other entries or by the user themselves, rank-ordered.
 
@@ -228,4 +228,3 @@ class AUAIFluency:
         return headers,rows
         
 registerscales.DPmScales().registerscale(AUAIFluency())
-# [] Double-checked calculations

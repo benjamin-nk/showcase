@@ -63,11 +63,6 @@ class DPmProfiles(): #Dissertation Psychometrics Profiles
 
         return self.profiles
 
-    #def Method to FillMissingFields
-    # I need to this keep my csv from breaking when some questions scores and not available
-    # So i should check that every profile has answered every question
-    # For any profiles that haven't they should be fill with a UNIQUE_ID_NULL to idenitfy them as empty
-
     def writecsv(self,input_variable=None,prefix=None,responselist=None):
         self.getprofiles()
 

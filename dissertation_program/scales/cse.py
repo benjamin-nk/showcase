@@ -1,8 +1,6 @@
 # scale: Creative Self-Efficacy (CSE)
-# scale source:
+# scale source: Beghetto, R. A. (2006). Creative self-efficacy: Correlates in middle and secondary students. Creativity research journal, 18(4), 447-457.
 
-from re import template
-from urllib import response
 import registerparticipants
 import registerscales
 import csv

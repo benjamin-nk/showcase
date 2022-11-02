@@ -1,5 +1,5 @@
 # scale: International Personality Item Pool
-# scale source
+# scale source: Goldberg, L. R., Johnson, J. A., Eber, H. W., Hogan, R., Ashton, M. C., Cloninger, C. R., & Gough, H. C. (2006). The International Personality Item Pool and the future of public-domain personality measures. Journal of Research in Personality, 40, 84-96. 
 
 import re
 import registerscales

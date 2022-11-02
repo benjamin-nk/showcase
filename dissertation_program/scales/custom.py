@@ -1,6 +1,3 @@
-# scale: 
-# scale source:
-
 import registerparticipants
 import registerscales
 import csv
@@ -14,19 +11,6 @@ class Custom:
     def calculate(self,responsedict):
         templatecolumns = registerscales.DPmScales().getscalecolumns(self.name)
         columns = responsedict.items()
-        # count = len(templatecolumns)
-        # check = 0
-        # for colname in templatecolumns:
-        #     for colname2,value in columns:
-        #         if colname == colname2:
-        #             if value == '' or value.isspace(): continue 
-                    
-        #             check += 1
-
-        # if check != count: 
-        #     self.score = 'null'
-
-        #     return self
 
         for colname in templatecolumns:
             for colname2,value in columns:

@@ -11,14 +11,6 @@ class __NULL__:
         self.name = 'cse'    
         self.score = 0
 
-    #Used only on first model participant
-    # def addcolumn(self,colname):
-    #     # This will define the fields globally the first time it is used
-    #     # so that subsequent objects can use the list
-    #     # Fool proof for adding same column
-    #     if colname not in registerscales.DPmScales().getscalecolumns(self.name):
-    #         registerscales.DPmScales().registerscalecolumn(self.name,colname)
-
     def calculate(self,responsedict):
         templatecolumns = registerscales.DPmScales().getscalecolumns(self.name)
         columns = responsedict.items()

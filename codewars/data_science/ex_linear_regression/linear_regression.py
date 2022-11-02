@@ -50,7 +50,7 @@ def regressionLine(x, y):
 
     return (round(a,4),round(b,4))
 
-regressionLine([25,30,35,40,45,50], [78,70,65,58,48,42])
+# regressionLine([25,30,35,40,45,50], [78,70,65,58,48,42])
 # Yt ex: regressionLine([17,13,12,15,16,14,16,16,18,19], [94,73,59,80,93,85,66,79,77,91])
 
 # Hand-calculation solution

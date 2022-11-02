@@ -1,5 +1,5 @@
 # scale: Creative Achievement Questionnare
-# scale source:
+# scale source: Carson, S. H., Peterson, J. B., & Higgins, D. M. (2005). Reliability, validity, and factor structure of the creative achievement questionnaire. Creativity research journal, 17(1), 37-50.
 
 import re
 import registerscales

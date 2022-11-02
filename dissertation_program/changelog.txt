@@ -1,19 +1,15 @@
-[Benjamin Udim Nkere | Last Updated: 21-10-22]
-
 -=-=-=-=-=-To-Do-=-=-=-=-=-
 - Nothing!?
-- Test this program's automatic coding against manual coding of data.
 
-### Non-priorities
+
+### Impractical Possibilities ###
+# [] Add way to manually input qualtrics column names for each module
+# [] Data handling between-subjects and within-subjects
 - Each scale/module will need to create its own table 4/5 completed [auaifluency,cse,hmts,ipip50]
 --> Recode create tables and writing tables to account for 'null' entries
 ---> could be simply? Or not? Custom SQL code to be written to not submit an entry where field == null
 ----> would have to supply one less parameter ot the SQL query.
 - consider making scales inherit methods for checking for missing entries
-
-### Impractical Possibilities ###
-# [] Add way to manually input qualtrics column names for each module
-# [] Data handling between-subjects and within-subjects
 
 ## Notes ##
 ---* i will need to check fluency manuaally because people can put in typos
@@ -59,6 +55,9 @@ A-long-time-ago
 - added NULL_FLAGS to replace 'null'
 - Created NULL_FLAGS for Empty scale data versus Incomplete scale data Done: HMTS, CSE, auaifluency, ipip50, CAQ
 - CAQ ***Missing Data (skipped) domains is being treated as 0 - See line ~163+*** 
+24-10-22
+- Test this program's automatic coding against manual coding of data.
+
 
 -=-=-=-=Thought-log-=-=-=-=-
 - trim off pid because there will be multiple columns of it from each of the scales

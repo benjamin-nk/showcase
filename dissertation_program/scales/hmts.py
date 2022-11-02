@@ -1,5 +1,5 @@
 # scale: Hagen's Matrices Test - Short form version
-# scale source
+# scale source: Heydasch, T., Haubrich, J. & Renner, K.-H. (2020). The Short Version of the Hagen Matrices Test (HMT-S). A 6-Item Induction Intelligence Test (T. Heydasch, Trans.). Methods, Data, Analyses, MDA, 7, 183e-205e. https://doi.org/10.12758/mda.2013.021 
 
 import registerscales
 import registerparticipants
