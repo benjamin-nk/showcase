@@ -18,6 +18,7 @@
 # a = Mean-y - b * Mean-x
 # Guide - Linear Regress: https://www.youtube.com/watch?v=GhrxgbQnEEU
 # Guide - Pearson's R: https://www.youtube.com/watch?v=2SCg8Kuh0tE 
+# Note: This statistical analysis is incomplete without an ANOVA to test the regression model's significance. As is, the prediction given by the regression coefficient is inconclusive.
 
 from math import sqrt
 import numpy
