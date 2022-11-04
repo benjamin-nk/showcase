@@ -14,7 +14,7 @@ def valid_braces(string):
         
         # completed brace check
         if c in [')','}',']']:
-            # check top item for opening brace, if not present then return false else 
+            # check top item for opening brace, if not present then return false 
             if peek != cbrace_map[c]:
                 return False
             else:
