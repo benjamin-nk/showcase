@@ -2,6 +2,8 @@ import sqlite3
 import json
 import csv
 import re
+import os
+import sys
 
 
 def prettyprint(d):
@@ -17,7 +19,7 @@ from scales.caq import *
 from scales.custom import *
 
 # I can make the following 3 paragraphs of code into another module so that parsing CSV is not unique to qualitrics
-csvfn = "diss_survey_22 October 2022_19.48.csv" # sample data file
+csvfn = os.path.join(sys.path[0],"diss_survey_22 October 2022_19.48.csv") # sample data file
 csvfh = open(csvfn,encoding='utf-8')
 
 reader = csv.DictReader(csvfh)
